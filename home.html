@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Cowburguer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.ibb.co/pvGVnh9/image-from-rawpixel-id-6129082-jpeg.jpg'); /* Imagem de fundo em alta qualidade */
+            background-size: cover; /* Garante que a imagem cubra toda a área */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Evita a repetição da imagem */
+            color: #4a2e14; /* Cor do texto do cardápio */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .cardapio-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Leve transparência para simular o papel */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b87333; /* Cor para título, similar ao estilo do cardápio */
+            font-family: 'Times New Roman', serif;
+        }
+
+        .hamburguer {
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f7e7c1; /* Fundo que lembra papel */
+            border: 1px solid #c2a585;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hamburguer:hover {
+            background-color: #edd9b2;
+        }
+
+        .descricao {
+            display: none;
+            margin-top: 10px;
+            color: #4a2e14;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            background-color: #b87333; /* Cor do botão */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .button-container button:hover {
+            background-color: #a05a29; /* Cor do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="cardapio-container">
+        <h1>Bem-vindo, <span id="user-name">Usuário</span>! Confira nosso Cardápio</h1>
+
+        <div class="hamburguer" onclick="toggleDescription('waco')">
+            <strong>Waco</strong> - R$26,90
+            <div id="waco" class="descricao">
+                Pão de brioche selado, hambúrguer 160g, queijo prato e molho da casa defumado.
+                <img src="https://i.ibb.co/your-image-waco.jpg" alt="Imagem do Waco"> <!-- Substitua pelo link da imagem -->
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('tyler')">
+            <strong>Tyler</strong> - R$28,90
+            <div id="tyler" class="descricao">
+                Pão de brioche selado, hambúrguer 160g, queijo prato, mix de folhas, tomate cereja e molho da casa defumado.
+                <img src="https://i.ibb.co/your-image-tyler.jpg" alt="Imagem do Tyler"> <!-- Substitua pelo link da imagem -->
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('barry')">
+            <strong>Barry</strong> - R$35,90
+            <div id="barry" class="descricao">
+                Pão de brioche selado, hambúrguer 160g, torresmo em rolo, molho barbecue, tomate cereja e molho defumado.
+                <img src="https://i.ibb.co/your-image-barry.jpg" alt="Imagem do Barry"> <!-- Substitua pelo link da imagem -->
+            </div>
+        </div>
+
+        <!-- Adicione mais hambúrgueres aqui... -->
+
+        <div class="button-container">
+            <button onclick="window.location.href='entrada.html'">Sair</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para obter parâmetros da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Extrair o nome do usuário da URL e exibir na página
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = getQueryParam('name');
+            if (userName) {
+                document.getElementById('user-name').textContent = userName;
+            }
+        });
+
+        function toggleDescription(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
