@@ -14,3 +14,10 @@ Front-end: HTML5, CSS3, JavaScript
 Back-end: Node.js, Express.js
 Banco de Dados: PostgreSQL
 Controle de Versão: Git
+
+Estrutura do Projeto
+config.js: Configurações de conexão com o banco de dados.
+test-connection.js: Script para testar a conexão com o banco de dados.
+package.json: Gerenciador de pacotes para dependências do projeto.
+entrada.html: Página de boas-vindas para os usuários.
+home.html: Página do cardápio com informações sobre os hambúrgueres.
