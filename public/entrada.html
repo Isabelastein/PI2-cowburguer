@@ -31,8 +31,14 @@
         }
 
         h1 {
-            color: #b87333;
+            color: #b87333; /* Cor de "Bem-vindo à" */
             font-family: 'Times New Roman', serif;
+        }
+
+        h2 {
+            color: #b87333; /* Aplique a mesma cor de "Bem-vindo à" */
+            font-family: 'Times New Roman', serif; /* Mantenha a mesma fonte se desejar */
+            margin-top: 10px; /* Adicione um espaço entre os títulos, se necessário */
         }
 
         label {
@@ -66,12 +72,44 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Bem-vindo à Hamburgueria Cowburguer!</h1>
-        <form id="welcome-form" action="home.html" method="get">
-            <label for="name">Digite seu nome:</label>
+        <h1>Bem-vindo à</h1>
+        <h2>Hamburgueria Cowburguer</h2>
+        <form id="welcome-form">
+            <label for="name">Digite seu nome completo:</label>
             <input type="text" id="name" name="name" required>
             <button type="submit">Entrar</button>
         </form>
     </div>
+    
+    <script>
+        document.getElementById('welcome-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const nome = document.getElementById('name').value; // Captura o valor do input
+
+            try {
+                const response = await fetch('/api/visitantes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ nome }), // Envia o nome como JSON
+                });
+
+                const data = await response.json(); // Captura a resposta do servidor
+
+                // Verifica se o visitante já estava registrado
+                if (response.status === 200) {
+                    alert(data.message); // Exibe a mensagem de que o visitante já está registrado
+                }
+
+                // Redireciona para a página do cardápio com o nome
+                window.location.href = `home.html?name=${encodeURIComponent(nome)}`; // Redireciona para home.html com o nome
+            } catch (error) {
+                console.error('Erro ao enviar dados:', error);
+                // Não mostra nenhuma mensagem, apenas redireciona
+                window.location.href = 'home.html'; // Redireciona mesmo em caso de erro
+            }
+        });
+    </script>
 </body>
 </html>
