@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://i.ibb.co/pvGVnh9/image-from-rawpixel-id-6129082-jpeg.jpg'); /* Imagem de fundo em alta qualidade */
+            background-image: url('https://i.ibb.co/pvGVnh9/image-from-rawpixel-id-6129082-jpeg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -21,34 +21,36 @@
         }
 
         .cardapio-container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 800px;
             width: 100%;
             margin-top: 20px;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             color: #b87333;
             font-family: 'Times New Roman', serif;
+            margin: 0 0 20px;
         }
 
         .hamburguer {
             cursor: pointer;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
-            background-color: #f7e7c1;
+            background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #c2a585;
-            border-radius: 5px;
-            transition: transform 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background-color 0.3s;
         }
 
         .hamburguer:hover {
             transform: scale(1.02);
-            background-color: #edd9b2;
+            background-color: #f0e4d7;
         }
 
         .descricao {
@@ -92,27 +94,75 @@
     <div class="cardapio-container">
         <h1>Bem-vindo, <span id="user-name">Usuário</span>! Confira nosso Cardápio</h1>
 
+        <div class="hamburguer" onclick="toggleDescription('albany')">
+            <strong>Albany</strong> - R$25,90
+            <div id="albany" class="descricao">
+                Pão de brioche selado, hambúrguer 160g, queijo cheddar e cebola caramelizada.
+                <img src="imagens/Albany.jpeg" alt="Imagem do Albany">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('arlington')">
+            <strong>Arlington</strong> - R$27,90
+            <div id="arlington" class="descricao">
+                Pão de brioche, hambúrguer 160g, bacon crocante e molho barbecue.
+                <img src="imagens/Arligton.jpeg" alt="Imagem do Arlington">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('colorado')">
+            <strong>Colorado</strong> - R$29,90
+            <div id="colorado" class="descricao">
+                Pão de brioche, hambúrguer 160g, guacamole e pimenta jalapeño.
+                <img src="imagens/Colorado.jpeg" alt="Imagem do Colorado">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('dallas')">
+            <strong>Dallas</strong> - R$30,90
+            <div id="dallas" class="descricao">
+                Pão de brioche, hambúrguer 160g, queijo azul e rúcula.
+                <img src="imagens/Dallas.jpeg" alt="Imagem do Dallas">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('elpaso')">
+            <strong>El Paso</strong> - R$28,90
+            <div id="elpaso" class="descricao">
+                Pão de brioche, hambúrguer 160g, molho chipotle e cebola roxa.
+                <img src="imagens/El Paso.jpeg" alt="Imagem do El Paso">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('fortdavis')">
+            <strong>Fort Davis</strong> - R$31,90
+            <div id="fortdavis" class="descricao">
+                Pão de brioche, hambúrguer 160g, queijo provolone e tomate.
+                <img src="imagens/Fort Davis.jpeg" alt="Imagem do Fort Davis">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('fortworth')">
+            <strong>Fort Worth</strong> - R$32,90
+            <div id="fortworth" class="descricao">
+                Pão de brioche, hambúrguer 160g, anéis de cebola e molho ranch.
+                <img src="imagens/Fort Worth.jpeg" alt="Imagem do Fort Worth">
+            </div>
+        </div>
+
+        <div class="hamburguer" onclick="toggleDescription('garland')">
+            <strong>Garland</strong> - R$26,90
+            <div id="garland" class="descricao">
+                Pão de brioche, hambúrguer 160g, queijo cheddar e picles.
+                <img src="imagens/Garland.jpeg" alt="Imagem do Garland">
+            </div>
+        </div>
+
         <div class="hamburguer" onclick="toggleDescription('waco')">
             <strong>Waco</strong> - R$26,90
             <div id="waco" class="descricao">
-                Pão de brioche selado, hambúrguer 160g, queijo prato e molho da casa defumado.
-                <img src="imagens/waco.jpg" alt="Imagem do Waco">
-            </div>
-        </div>
-
-        <div class="hamburguer" onclick="toggleDescription('tyler')">
-            <strong>Tyler</strong> - R$28,90
-            <div id="tyler" class="descricao">
-                Pão de brioche selado, hambúrguer 160g, queijo prato, mix de folhas, tomate cereja e molho da casa defumado.
-                <img src="imagens/tyler.jpg" alt="Imagem do Tyler">
-            </div>
-        </div>
-
-        <div class="hamburguer" onclick="toggleDescription('barry')">
-            <strong>Barry</strong> - R$35,90
-            <div id="barry" class="descricao">
-                Pão de brioche selado, hambúrguer 160g, torresmo em rolo, molho barbecue, tomate cereja e molho defumado.
-                <img src="imagens/barry.jpg" alt="Imagem do Barry">
+                Pão de brioche, hambúrguer 160g, queijo prato e molho da casa defumado.
+                <img src="imagens/Waco.jpeg" alt="Imagem do Waco">
             </div>
         </div>
 
@@ -135,6 +185,12 @@
         });
 
         function toggleDescription(id) {
+            const descriptions = document.querySelectorAll('.descricao');
+            descriptions.forEach(desc => {
+                if (desc.id !== id) {
+                    desc.style.display = "none"; // Esconde outras descrições
+                }
+            });
             var element = document.getElementById(id);
             if (element.style.display === "block") {
                 element.style.display = "none";
