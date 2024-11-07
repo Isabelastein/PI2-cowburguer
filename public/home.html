@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio Cowburguer</title>
     <style>
+        /* Estilo básico da página */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-image: url('https://i.ibb.co/pvGVnh9/image-from-rawpixel-id-6129082-jpeg.jpg');
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             color: #4a2e14;
             margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,14 +19,15 @@
         }
 
         .cardapio-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             margin-top: 20px;
             text-align: center;
+            overflow: hidden;
         }
 
         h1 {
@@ -37,15 +36,38 @@
             margin: 0 0 20px;
         }
 
-        .hamburguer {
+        .order-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .order-container label {
+            font-weight: bold;
+        }
+
+        .order-container select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #b87333;
             cursor: pointer;
-            padding: 15px;
-            margin: 10px 0;
+        }
+
+        .hamburguer-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+
+        .hamburguer {
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #c2a585;
             border-radius: 10px;
+            padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, background-color 0.3s;
+            text-align: center;
         }
 
         .hamburguer:hover {
@@ -53,18 +75,7 @@
             background-color: #f0e4d7;
         }
 
-        .descricao {
-            display: none;
-            margin-top: 10px;
-            color: #4a2e14;
-            border: 1px solid #c2a585;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
         img {
-            display: block;
             max-width: 100%;
             margin-top: 10px;
             border-radius: 5px;
@@ -94,109 +105,102 @@
     <div class="cardapio-container">
         <h1>Bem-vindo, <span id="user-name">Usuário</span>! Confira nosso Cardápio</h1>
 
-        <div class="hamburguer" onclick="toggleDescription('albany')">
-            <strong>Albany</strong> - R$25,90
-            <div id="albany" class="descricao">
-                Pão de brioche selado, hambúrguer 160g, queijo cheddar e cebola caramelizada.
+        <!-- Opções de Ordenação -->
+        <div class="order-container">
+            <label for="orderSelect">Ordenar por:</label>
+            <select id="orderSelect" onchange="sortBurgers()">
+                <option value="default">Padrão</option>
+                <option value="priceLowHigh">Preço: Menor para Maior</option>
+                <option value="priceHighLow">Preço: Maior para Menor</option>
+            </select>
+        </div>
+
+        <!-- Lista de Hambúrgueres -->
+        <div class="hamburguer-list">
+            <div class="hamburguer" data-price="25.90">
+                <strong>Albany</strong> - R$25,90
+                <p>Hambúrguer de carne 100% bovina com queijo cheddar, alface, tomate, cebola roxa e molho especial. Acompanha batata frita.</p>
                 <img src="imagens/Albany.jpeg" alt="Imagem do Albany">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('arlington')">
-            <strong>Arlington</strong> - R$27,90
-            <div id="arlington" class="descricao">
-                Pão de brioche, hambúrguer 160g, bacon crocante e molho barbecue.
+            <div class="hamburguer" data-price="27.90">
+                <strong>Arlington</strong> - R$27,90
+                <p>Hambúrguer de carne 100% bovina com bacon crocante, queijo prato, alface, tomate e maionese da casa. Acompanha batata frita.</p>
                 <img src="imagens/Arligton.jpeg" alt="Imagem do Arlington">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('colorado')">
-            <strong>Colorado</strong> - R$29,90
-            <div id="colorado" class="descricao">
-                Pão de brioche, hambúrguer 160g, guacamole e pimenta jalapeño.
+            <div class="hamburguer" data-price="28.90">
+                <strong>Colorado</strong> - R$28,90
+                <p>Hambúrguer de carne 100% bovina, queijo cheddar, cebola caramelizada, picles e molho barbecue. Acompanha batata frita.</p>
                 <img src="imagens/Colorado.jpeg" alt="Imagem do Colorado">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('dallas')">
-            <strong>Dallas</strong> - R$30,90
-            <div id="dallas" class="descricao">
-                Pão de brioche, hambúrguer 160g, queijo azul e rúcula.
+            <div class="hamburguer" data-price="26.90">
+                <strong>Dallas</strong> - R$26,90
+                <p>Hambúrguer de carne 100% bovina com queijo cheddar, bacon, alface e molho de mostarda e mel. Acompanha batata frita.</p>
                 <img src="imagens/Dallas.jpeg" alt="Imagem do Dallas">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('elpaso')">
-            <strong>El Paso</strong> - R$28,90
-            <div id="elpaso" class="descricao">
-                Pão de brioche, hambúrguer 160g, molho chipotle e cebola roxa.
+            <div class="hamburguer" data-price="29.90">
+                <strong>El Paso</strong> - R$29,90
+                <p>Hambúrguer de carne 100% bovina com guacamole, cebola roxa, queijo cheddar e molho picante. Acompanha batata frita.</p>
                 <img src="imagens/El Paso.jpeg" alt="Imagem do El Paso">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('fortdavis')">
-            <strong>Fort Davis</strong> - R$31,90
-            <div id="fortdavis" class="descricao">
-                Pão de brioche, hambúrguer 160g, queijo provolone e tomate.
+            <div class="hamburguer" data-price="24.90">
+                <strong>Fort Davis</strong> - R$24,90
+                <p>Hambúrguer de carne 100% bovina, queijo prato, alface, tomate e molho de iogurte. Acompanha batata frita.</p>
                 <img src="imagens/Fort Davis.jpeg" alt="Imagem do Fort Davis">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('fortworth')">
-            <strong>Fort Worth</strong> - R$32,90
-            <div id="fortworth" class="descricao">
-                Pão de brioche, hambúrguer 160g, anéis de cebola e molho ranch.
+            <div class="hamburguer" data-price="30.90">
+                <strong>Fort Worth</strong> - R$30,90
+                <p>Hambúrguer de carne 100% bovina, queijo cheddar, alface, tomate e molho especial de mostarda e mel. Acompanha batata frita.</p>
                 <img src="imagens/Fort Worth.jpeg" alt="Imagem do Fort Worth">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('garland')">
-            <strong>Garland</strong> - R$26,90
-            <div id="garland" class="descricao">
-                Pão de brioche, hambúrguer 160g, queijo cheddar e picles.
+            <div class="hamburguer" data-price="32.90">
+                <strong>Garland</strong> - R$32,90
+                <p>Hambúrguer de carne 100% bovina com queijo cheddar, bacon crocante, alface e molho barbecue. Acompanha batata frita.</p>
                 <img src="imagens/Garland.jpeg" alt="Imagem do Garland">
             </div>
-        </div>
 
-        <div class="hamburguer" onclick="toggleDescription('waco')">
-            <strong>Waco</strong> - R$26,90
-            <div id="waco" class="descricao">
-                Pão de brioche, hambúrguer 160g, queijo prato e molho da casa defumado.
+            <div class="hamburguer" data-price="33.90">
+                <strong>Orange</strong> - R$33,90
+                <p>Hambúrguer de carne 100% bovina com queijo cheddar, picles, alface e molho especial. Acompanha batata frita.</p>
+                <img src="imagens/Orange.jpeg" alt="Imagem do Orange">
+            </div>
+
+            <div class="hamburguer" data-price="31.90">
+                <strong>Waco</strong> - R$31,90
+                <p>Hambúrguer de carne 100% bovina, queijo prato, alface, tomate, cebola roxa e molho mostarda e mel. Acompanha batata frita.</p>
                 <img src="imagens/Waco.jpeg" alt="Imagem do Waco">
             </div>
         </div>
 
+        <!-- Botão de Sair -->
         <div class="button-container">
             <button onclick="window.location.href='entrada.html'">Sair</button>
         </div>
     </div>
 
     <script>
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+        // Função para ordenar os hambúrgueres
+        function sortBurgers() {
+            const burgers = document.querySelectorAll('.hamburguer');
+            const order = document.getElementById('orderSelect').value;
+            let sortedBurgers = [...burgers];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const userName = getQueryParam('name');
-            if (userName) {
-                document.getElementById('user-name').textContent = userName;
+            if (order === 'priceLowHigh') {
+                sortedBurgers.sort((a, b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
+            } else if (order === 'priceHighLow') {
+                sortedBurgers.sort((a, b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
             }
-        });
 
-        function toggleDescription(id) {
-            const descriptions = document.querySelectorAll('.descricao');
-            descriptions.forEach(desc => {
-                if (desc.id !== id) {
-                    desc.style.display = "none"; // Esconde outras descrições
-                }
-            });
-            var element = document.getElementById(id);
-            if (element.style.display === "block") {
-                element.style.display = "none";
-            } else {
-                element.style.display = "block";
-            }
+            // Atualizar a lista
+            const container = document.querySelector('.hamburguer-list');
+            container.innerHTML = '';
+            sortedBurgers.forEach(burger => container.appendChild(burger));
         }
     </script>
 </body>
