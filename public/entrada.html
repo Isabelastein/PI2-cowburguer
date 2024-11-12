@@ -85,12 +85,12 @@
         document.getElementById('welcome-form').addEventListener('submit', async (event) => {
             event.preventDefault(); // Impede o envio padrão do formulário
             const nome = document.getElementById('name').value; // Captura o valor do input
-
+    
             // Salva o nome no localStorage
             if (nome) {
                 localStorage.setItem('userName', nome); // Armazena o nome do usuário no localStorage
             }
-
+    
             try {
                 const response = await fetch('/api/visitantes', {
                     method: 'POST',
@@ -99,22 +99,21 @@
                     },
                     body: JSON.stringify({ nome }), // Envia o nome como JSON
                 });
-
+    
                 const data = await response.json(); // Captura a resposta do servidor
-
+    
                 // Verifica se o visitante já estava registrado
-                if (response.status === 200) {
+                if (response.status === 200 && data.message === "Visitante já registrado") {
                     alert(data.message); // Exibe a mensagem de que o visitante já está registrado
                 }
-
-                // Redireciona para a página do cardápio com o nome
+    
+                // Redireciona para a página do cardápio
                 window.location.href = 'home.html'; // Redireciona para home.html
             } catch (error) {
                 console.error('Erro ao enviar dados:', error);
-                // Não mostra nenhuma mensagem, apenas redireciona
-                window.location.href = 'home.html'; // Redireciona mesmo em caso de erro
+                // Redireciona para home.html mesmo em caso de erro
+                window.location.href = 'home.html';
             }
         });
     </script>
-</body>
-</html>
+    

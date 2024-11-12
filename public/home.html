@@ -103,12 +103,12 @@
 </head>
 <body>
     <div class="cardapio-container">
-        <h1>Bem-vindo, <span id="user-name">Visitante</span>! Confira nosso Cardápio</h1>
+        <h1><span id="user-name">Visitante</span>! Confira nosso Cardápio</h1>
 
         <!-- Opções de Ordenação -->
         <div class="order-container">
-            <label for="orderSelect" id="orderLabel">Ordenar por:</label>
-            <select id="orderSelect" onchange="sortBurgers()" aria-labelledby="orderLabel">
+            <label for="orderSelect">Ordenar por:</label>
+            <select id="orderSelect" onchange="sortBurgers()">
                 <option value="default">Padrão</option>
                 <option value="priceLowHigh">Preço: Menor para Maior</option>
                 <option value="priceHighLow">Preço: Maior para Menor</option>
@@ -117,64 +117,64 @@
 
         <!-- Lista de Hambúrgueres -->
         <div class="hamburguer-list">
-            <div class="hamburguer" data-price="39.90" role="article">
-                <h2>Albany - R$39,90</h2>
-                <p>Pão de brioche selado, hambúrguer empanado 160g, cream cheese, bacon, alface e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Albany.jpeg" alt="Imagem do Albany, hambúrguer empanado com cream cheese, bacon e alface" />
+            <div class="hamburguer" data-price="39.90">
+                <strong>Albany</strong> - R$39,90
+                <p>Pão de brioche selado, hambúrguer empanado 160g, cream cheese, bacon, alface e molho da casa defumado. Acompanha batata frita</p>
+                <img src="imagens/Albany.jpeg" alt="Imagem do Albany">
             </div>
 
-            <div class="hamburguer" data-price="39.90" role="article">
-                <h2>Arlington - R$39,90</h2>
-                <p>Pão australiano selado, hambúrguer 160g, geleia de bacon, queijo prato, rúcula, tomate cereja, cebola roxa e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Arligton.jpeg" alt="Imagem do Arlington, hambúrguer com geleia de bacon, rúcula e cebola roxa" />
+            <div class="hamburguer" data-price="39.90">
+                <strong>Arlington</strong> - R$39,90
+                <p>Pão australiano selado, hamburgúer 160g, geleia de bacon, queijo prato, rúcula, tomate cereja, cebola roxa e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Arligton.jpeg" alt="Imagem do Arlington">
             </div>
 
-            <div class="hamburguer" data-price="35.90" role="article">
-                <h2>Colorado - R$35,90</h2>
-                <p>Pão australiano selado, hambúrguer 160g, mix de cogumelos, queijo prato, tomate cereja e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Colorado.jpeg" alt="Imagem do Colorado, hambúrguer com cogumelos, queijo prato e molho defumado" />
+            <div class="hamburguer" data-price="35.90">
+                <strong>Colorado</strong> - R$35,90
+                <p>Pão australiano selado, hamburgúer 160g, mix de cogumelos, queijo prato, tomate cereja e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Colorado.jpeg" alt="Imagem do Colorado">
             </div>
 
-            <div class="hamburguer" data-price="34.90" role="article">
-                <h2>Dallas - R$34,90</h2>
-                <p>Pão de brioche selado, hambúrguer 160g, bacon, molho barbecue, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Dallas.jpeg" alt="Imagem do Dallas, hambúrguer com bacon, molho barbecue e queijo prato" />
+            <div class="hamburguer" data-price="34.90">
+                <strong>Dallas</strong> - R$34,90
+                <p>Pão de brioche selado, hamburgúer 160g, bacon, molho barbecue, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Dallas.jpeg" alt="Imagem do Dallas">
             </div>
 
-            <div class="hamburguer" data-price="34.90" role="article">
-                <h2>El Paso - R$34,90</h2>
-                <p>Pão de brioche selado, hambúrguer 160g, creme de cheddar, doritos e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/El Paso.jpeg" alt="Imagem do El Paso, hambúrguer com creme de cheddar e doritos" />
+            <div class="hamburguer" data-price="34.90">
+                <strong>El Paso</strong> - R$34,90
+                <p>Pão de brioche selado, hamburgúer 160g, creme de cheddar, doritos e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/El Paso.jpeg" alt="Imagem do El Paso">
             </div>
 
-            <div class="hamburguer" data-price="36.90" role="article">
-                <h2>Fort Davis - R$36,90</h2>
-                <p>Pão de brioche selado, hambúrguer 160g, molho de três queijos (prato, parmesão e requeijão), farofa de bacon e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Fort Davis.jpeg" alt="Imagem do Fort Davis, hambúrguer com molho de três queijos e farofa de bacon" />
+            <div class="hamburguer" data-price="36.90">
+                <strong>Fort Davis</strong> - R$36,90
+                <p>Pão de brioche selado, hamburgúer 160g, molho de três queijos (prato, parmesão e requeijão), farofa de bacon e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Fort Davis.jpeg" alt="Imagem do Fort Davis">
             </div>
 
-            <div class="hamburguer" data-price="34.90" role="article">
-                <h2>Fort Worth - R$34,90</h2>
-                <p>Pão de brioche selado, hambúrguer 160g, bacon, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Fort Worth.jpeg" alt="Imagem do Fort Worth, hambúrguer com bacon e queijo prato" />
+            <div class="hamburguer" data-price="34.90">
+                <strong>Fort Worth</strong> - R$34,90
+                <p>Pão de brioche selado, hamburgúer 160g, bacon, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Fort Worth.jpeg" alt="Imagem do Fort Worth">
             </div>
 
-            <div class="hamburguer" data-price="40.90" role="article">
-                <h2>Garland - R$40,90</h2>
-                <p>Pão de brioche selado, hambúrguer empanado 160g, molho de tomate caseiro, queijo prato gratinado, queijo parmesão e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Garland.jpeg" alt="Imagem do Garland, hambúrguer com molho de tomate caseiro e queijo gratinado" />
+            <div class="hamburguer" data-price="40.90">
+                <strong>Garland</strong> - R$40,90
+                <p>Pão de brioche selado, hamburgúer empanado 160g, molho de tomate caseiro, queijo prato gratinado, queijo parmesão e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Garland.jpeg" alt="Imagem do Garland">
             </div>
 
-            <div class="hamburguer" data-price="35.90" role="article">
-                <h2>Orange - R$35,90</h2>
-                <p>Pão de brioche selado, hambúrguer 160g, bacon, creme de cheddar, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Orange.jpeg" alt="Imagem do Orange, hambúrguer com bacon e creme de cheddar" />
+            <div class="hamburguer" data-price="35.90">
+                <strong>Orange</strong> - R$35,90
+                <p>Pão de brioche selado, hamburgúer 160g, bacon, creme de cheddar, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Orange.jpeg" alt="Imagem do Orange">
             </div>
 
-            <div class="hamburguer" data-price="28.90" role="article">
-                <h2>Waco - R$28,90</h2>
-                <p>Pão de brioche selado, hambúrguer 160g, alface, tomate e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Waco.jpeg" alt="Imagem do Waco, hambúrguer com alface, tomate e molho defumado" />
+            <div class="hamburguer" data-price="28.90">
+                <strong>Waco</strong> - R$28,90
+                <p>Pão de brioche selado, hamburgúer 160g, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Waco.jpeg" alt="Imagem do Waco">
             </div>
         </div>
 
@@ -184,56 +184,55 @@
         </div>
     </div>
 
-    <script>
-        // Função para capturar o nome do visitante na URL e exibir na página
-        function displayUserName() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const userName = urlParams.get('name');
-            const nameElement = document.getElementById('user-name');
+    
 
-            if (userName) {
-                nameElement.textContent = decodeURIComponent(userName); // Decodifica o nome da URL
-            } else {
-                nameElement.textContent = 'Visitante';
-            }
+    <script>
+        let originalOrder = [];
+
+        // Função para salvar a ordem original dos hambúrgueres
+        function saveOriginalOrder() {
+            const burgers = document.querySelectorAll('.hamburguer');
+            originalOrder = Array.from(burgers);
         }
 
-        let originalOrder = []; // Variável global para armazenar a ordem original dos hambúrgueres
-
-// Função para capturar a ordem original dos hambúrgueres
-function captureOriginalOrder() {
-    const burgers = document.querySelectorAll('.hamburguer');
-    originalOrder = Array.from(burgers); // Armazena os hambúrgueres na ordem original
-}
-
-// Função para ordenar hambúrgueres
-function sortBurgers() {
-    const order = document.getElementById('orderSelect').value;
-    const burgers = document.querySelectorAll('.hamburguer');
-    const burgerArray = Array.from(burgers);
-    
-    if (order === 'priceLowHigh') {
-        burgerArray.sort((a, b) => a.dataset.price - b.dataset.price);
-    } else if (order === 'priceHighLow') {
-        burgerArray.sort((a, b) => b.dataset.price - a.dataset.price);
-    } else if (order === 'default') {
-        // Restaurar a ordem original
-        burgerArray.length = 0; // Limpar o array
-        burgerArray.push(...originalOrder); // Preencher com a ordem original
+ // Função para exibir o nome do usuário armazenado no localStorage
+function displayUserName() {
+    const userName = localStorage.getItem('userName'); // Recupera o nome do localStorage
+    const nameElement = document.getElementById('user-name');
+    if (userName) {
+        nameElement.textContent = `Bem-vindo, ${userName}`; // Exibe o nome do usuário
+    } else {
+        nameElement.textContent = "Bem-vindo, visitante";
     }
-
-    // Reorganiza os hambúrgueres na página
-    const burgerList = document.querySelector('.hamburguer-list');
-    burgerList.innerHTML = '';
-    burgerArray.forEach(burger => burgerList.appendChild(burger));
 }
 
-// Chama a função para capturar a ordem original dos hambúrgueres assim que a página carregar
-window.onload = captureOriginalOrder;
+        // Função para ordenar hambúrgueres
+        function sortBurgers() {
+            const order = document.getElementById('orderSelect').value;
+            const burgers = document.querySelectorAll('.hamburguer');
+            const burgerList = document.querySelector('.hamburguer-list');
+            const burgerArray = Array.from(burgers);
 
+            if (order === 'priceLowHigh') {
+                burgerArray.sort((a, b) => a.dataset.price - b.dataset.price);
+            } else if (order === 'priceHighLow') {
+                burgerArray.sort((a, b) => b.dataset.price - a.dataset.price);
+            } else if (order === 'default') {
+                // Restaurar a ordem original
+                burgerArray.length = 0;  // Limpa a array
+                originalOrder.forEach(burger => burgerArray.push(burger));  // Preenche com a ordem original
+            }
 
-        // Chama a função para exibir o nome do usuário
-        displayUserName();
+            // Reorganiza os hambúrgueres na página
+            burgerList.innerHTML = ''; // Limpa a lista de hambúrgueres
+            burgerArray.forEach(burger => burgerList.appendChild(burger)); // Adiciona os hambúrgueres ordenados
+        }
+
+        // Chama as funções quando a página carregar
+        window.onload = function() {
+            saveOriginalOrder();
+            displayUserName();
+        };
     </script>
 </body>
 </html>
