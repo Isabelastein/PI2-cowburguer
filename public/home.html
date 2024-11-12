@@ -107,8 +107,8 @@
 
         <!-- Opções de Ordenação -->
         <div class="order-container">
-            <label for="orderSelect">Ordenar por:</label>
-            <select id="orderSelect" onchange="sortBurgers()">
+            <label for="orderSelect" id="orderLabel">Ordenar por:</label>
+            <select id="orderSelect" onchange="sortBurgers()" aria-labelledby="orderLabel">
                 <option value="default">Padrão</option>
                 <option value="priceLowHigh">Preço: Menor para Maior</option>
                 <option value="priceHighLow">Preço: Maior para Menor</option>
@@ -117,64 +117,64 @@
 
         <!-- Lista de Hambúrgueres -->
         <div class="hamburguer-list">
-            <div class="hamburguer" data-price="39.90">
-                <strong>Albany</strong> - R$39,90
-                <p>Pão de brioche selado, hambúrguer empanado 160g, cream cheese, bacon, alface e molho da casa defumado. Acompanha batata frita</p>
-                <img src="imagens/Albany.jpeg" alt="Imagem do Albany">
+            <div class="hamburguer" data-price="39.90" role="article">
+                <h2>Albany - R$39,90</h2>
+                <p>Pão de brioche selado, hambúrguer empanado 160g, cream cheese, bacon, alface e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Albany.jpeg" alt="Imagem do Albany, hambúrguer empanado com cream cheese, bacon e alface" />
             </div>
 
-            <div class="hamburguer" data-price="39.90">
-                <strong>Arlington</strong> - R$39,90
-                <p>Pão australiano selado, hamburgúer 160g, geleia de bacon, queijo prato, rúcula, tomate cereja, cebola roxa e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Arligton.jpeg" alt="Imagem do Arlington">
+            <div class="hamburguer" data-price="39.90" role="article">
+                <h2>Arlington - R$39,90</h2>
+                <p>Pão australiano selado, hambúrguer 160g, geleia de bacon, queijo prato, rúcula, tomate cereja, cebola roxa e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Arligton.jpeg" alt="Imagem do Arlington, hambúrguer com geleia de bacon, rúcula e cebola roxa" />
             </div>
 
-            <div class="hamburguer" data-price="35.90">
-                <strong>Colorado</strong> - R$35,90
-                <p>Pão australiano selado, hamburgúer 160g, mix de cogumelos, queijo prato, tomate cereja e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Colorado.jpeg" alt="Imagem do Colorado">
+            <div class="hamburguer" data-price="35.90" role="article">
+                <h2>Colorado - R$35,90</h2>
+                <p>Pão australiano selado, hambúrguer 160g, mix de cogumelos, queijo prato, tomate cereja e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Colorado.jpeg" alt="Imagem do Colorado, hambúrguer com cogumelos, queijo prato e molho defumado" />
             </div>
 
-            <div class="hamburguer" data-price="34.90">
-                <strong>Dallas</strong> - R$34,90
-                <p>Pão de brioche selado, hamburgúer 160g, bacon, molho barbecue, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Dallas.jpeg" alt="Imagem do Dallas">
+            <div class="hamburguer" data-price="34.90" role="article">
+                <h2>Dallas - R$34,90</h2>
+                <p>Pão de brioche selado, hambúrguer 160g, bacon, molho barbecue, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Dallas.jpeg" alt="Imagem do Dallas, hambúrguer com bacon, molho barbecue e queijo prato" />
             </div>
 
-            <div class="hamburguer" data-price="34.90">
-                <strong>El Paso</strong> - R$34,90
-                <p>Pão de brioche selado, hamburgúer 160g, creme de cheddar, doritos e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/El Paso.jpeg" alt="Imagem do El Paso">
+            <div class="hamburguer" data-price="34.90" role="article">
+                <h2>El Paso - R$34,90</h2>
+                <p>Pão de brioche selado, hambúrguer 160g, creme de cheddar, doritos e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/El Paso.jpeg" alt="Imagem do El Paso, hambúrguer com creme de cheddar e doritos" />
             </div>
 
-            <div class="hamburguer" data-price="36.90">
-                <strong>Fort Davis</strong> - R$36,90
-                <p>Pão de brioche selado, hamburgúer 160g, molho de três queijos (prato, parmesão e requeijão), farofa de bacon e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Fort Davis.jpeg" alt="Imagem do Fort Davis">
+            <div class="hamburguer" data-price="36.90" role="article">
+                <h2>Fort Davis - R$36,90</h2>
+                <p>Pão de brioche selado, hambúrguer 160g, molho de três queijos (prato, parmesão e requeijão), farofa de bacon e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Fort Davis.jpeg" alt="Imagem do Fort Davis, hambúrguer com molho de três queijos e farofa de bacon" />
             </div>
 
-            <div class="hamburguer" data-price="34.90">
-                <strong>Fort Worth</strong> - R$34,90
-                <p>Pão de brioche selado, hamburgúer 160g, bacon, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Fort Worth.jpeg" alt="Imagem do Fort Worth">
+            <div class="hamburguer" data-price="34.90" role="article">
+                <h2>Fort Worth - R$34,90</h2>
+                <p>Pão de brioche selado, hambúrguer 160g, bacon, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Fort Worth.jpeg" alt="Imagem do Fort Worth, hambúrguer com bacon e queijo prato" />
             </div>
 
-            <div class="hamburguer" data-price="40.90">
-                <strong>Garland</strong> - R$40,90
-                <p>Pão de brioche selado, hamburgúer empanado 160g, molho de tomate caseiro, queijo prato gratinado, queijo parmesão e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Garland.jpeg" alt="Imagem do Garland">
+            <div class="hamburguer" data-price="40.90" role="article">
+                <h2>Garland - R$40,90</h2>
+                <p>Pão de brioche selado, hambúrguer empanado 160g, molho de tomate caseiro, queijo prato gratinado, queijo parmesão e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Garland.jpeg" alt="Imagem do Garland, hambúrguer com molho de tomate caseiro e queijo gratinado" />
             </div>
 
-            <div class="hamburguer" data-price="35.90">
-                <strong>Orange</strong> - R$35,90
-                <p>Pão de brioche selado, hamburgúer 160g, bacon, creme de cheddar, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Orange.jpeg" alt="Imagem do Orange">
+            <div class="hamburguer" data-price="35.90" role="article">
+                <h2>Orange - R$35,90</h2>
+                <p>Pão de brioche selado, hambúrguer 160g, bacon, creme de cheddar, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Orange.jpeg" alt="Imagem do Orange, hambúrguer com bacon e creme de cheddar" />
             </div>
 
-            <div class="hamburguer" data-price="28.90">
-                <strong>Waco</strong> - R$28,90
-                <p>Pão de brioche selado, hamburgúer 160g, queijo prato e molho da casa defumado. Acompanha batata frita.</p>
-                <img src="imagens/Waco.jpeg" alt="Imagem do Waco">
+            <div class="hamburguer" data-price="28.90" role="article">
+                <h2>Waco - R$28,90</h2>
+                <p>Pão de brioche selado, hambúrguer 160g, alface, tomate e molho da casa defumado. Acompanha batata frita.</p>
+                <img src="imagens/Waco.jpeg" alt="Imagem do Waco, hambúrguer com alface, tomate e molho defumado" />
             </div>
         </div>
 
